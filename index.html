@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080808">
+<title>Barbearia Inho Dú Corte</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#080808;color:#fff;font-family:Arial,sans-serif}
+header{padding:24px 18px;text-align:center;border-bottom:1px solid #292929}
+.logo{font-size:13px;letter-spacing:4px;color:#d8b34e}
+h1{font-size:29px;margin:14px 0 8px}
+h1 span{color:#d8b34e}
+header p{color:#aaa;font-size:14px}
+main{max-width:520px;margin:auto;padding:22px 18px}
+.hero{padding:28px 20px;text-align:center;border:1px solid #493b19;border-radius:18px;background:linear-gradient(145deg,#1b1912,#101010)}
+.tag{color:#d8b34e;font-size:12px;letter-spacing:2px}
+.hero h2{font-size:27px;line-height:1.2;margin:16px 0}
+.hero p{color:#ccc;line-height:1.6;font-size:14px}
+.btn{display:block;width:100%;padding:16px;margin-top:18px;border:0;border-radius:10px;background:#d8b34e;color:#111;font-size:15px;font-weight:bold;text-align:center;text-decoration:none;cursor:pointer}
+h3{margin-top:30px;font-size:19px}
+.services{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.service{padding:17px 14px;border:1px solid #333;border-radius:12px;background:#141414}
+.service b{display:block;margin-bottom:8px}
+.service span{font-size:13px;color:#d8b34e}
+.note{font-size:12px;color:#999;line-height:1.5}
+form{padding:18px;background:#141414;border:1px solid #333;border-radius:14px}
+label{display:block;margin-top:14px;margin-bottom:7px;font-size:13px;color:#ddd}
+input,select{width:100%;padding:14px;border:1px solid #444;border-radius:8px;background:#090909;color:#fff;font-size:15px}
+footer{text-align:center;padding:24px 16px;color:#888;font-size:12px;border-top:1px solid #292929}
+.gold{color:#d8b34e}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">BARBEARIA</div>
+  <h1>INHO DÚ <span>CORTE</span></h1>
+  <p>Seu estilo. Seu corte. Sua identidade.</p>
+</header>
+<main>
+  <section class="hero">
+    <div class="tag">ESTILO • QUALIDADE • RESPEITO</div>
+    <h2>Seu próximo corte começa aqui.</h2>
+    <p>Entre na fila on-line e acompanhe a proposta de atendimento sem precisar ficar esperando dentro da barbearia.</p>
+    <a class="btn" href="#fila">QUERO ENTRAR NA FILA</a>
+  </section>
+
+  <h3>Nossos serviços</h3>
+  <section class="services">
+    <div class="service"><b>✂️ Corte masculino</b><span>Consulte o preço</span></div>
+    <div class="service"><b>🧔 Barba</b><span>Consulte o preço</span></div>
+    <div class="service"><b>💈 Corte + barba</b><span>Consulte o preço</span></div>
+    <div class="service"><b>✨ Acabamento</b><span>Consulte o preço</span></div>
+  </section>
+
+  <h3 id="fila">Fila on-line</h3>
+  <form id="formFila">
+    <p class="note">Preencha seus dados para conhecer o formulário. A fila ainda não está conectada ao sistema de atendimento.</p>
+    <label for="nome">Seu nome</label>
+    <input id="nome" name="nome" placeholder="Digite seu nome" required>
+    <label for="telefone">WhatsApp</label>
+    <input id="telefone" name="telefone" type="tel" placeholder="(DDD) 99999-9999" required>
+    <label for="servico">Qual serviço deseja?</label>
+    <select id="servico" name="servico" required>
+      <option value="">Escolha um serviço</option>
+      <option>Corte masculino</option>
+      <option>Barba</option>
+      <option>Corte + barba</option>
+      <option>Acabamento</option>
+    </select>
+    <button class="btn" type="submit">TESTAR FORMULÁRIO</button>
+    <p class="note" id="aviso" role="status"></p>
+  </form>
+  <h3>Como funciona?</h3>
+  <p class="note">1. Confira a disponibilidade da fila.<br><br>2. Informe seus dados e o serviço.<br><br>3. Aguarde a confirmação oficial da sua vez.</p>
+</main>
+<footer>
+  <p class="gold">BARBEARIA INHO DÚ CORTE</p>
+  Atendimento com respeito e estilo.<br>
+  <p>Os preços e horários serão configurados pelo responsável.</p>
+</footer>
+<script>
+document.getElementById('formFila').addEventListener('submit',function(e){
+  e.preventDefault();
+  document.getElementById('aviso').textContent=
+  'Demonstração: seus dados não foram enviados nem salvos. A fila real será ativada na próxima etapa.';
+});
+</script>
+</body>
+</html>
