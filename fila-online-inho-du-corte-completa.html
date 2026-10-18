@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#09090b">
+<title>Fila Online | Barbearia Inho Dú Corte</title>
+<style>
+:root{--bg:#09090b;--panel:#151517;--panel2:#202024;--gold:#d4af37;--gold2:#f0d778;--text:#f5f5f5;--muted:#aaaab2;--line:#36363c;--red:#ff7777;--green:#85e0a0;--blue:#a8dcff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#211b0a 0,#09090b 48%);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;min-height:100vh}button,input,select,textarea{font:inherit}button{cursor:pointer;border:0;border-radius:10px;padding:11px 14px;font-weight:750;transition:.15s}button:active{transform:scale(.98)}button:disabled{opacity:.4;cursor:not-allowed}.btn-gold{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#17140a}.btn-dark{background:#29292e;color:#fff;border:1px solid #444}.btn-danger{background:#4b2023;color:#ffd9d9;border:1px solid #73353a}.btn-green{background:#173522;color:#b7f5c7;border:1px solid #2d6640}.btn-small{padding:7px 9px;font-size:.82rem}.wrap{width:min(100% - 26px,1120px);margin:auto}.top{padding:22px 0 14px;text-align:center}.brand-mark{width:56px;height:56px;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;margin:0 auto 10px;color:var(--gold);font-size:27px;font-weight:900;overflow:hidden}.brand-mark img{width:100%;height:100%;object-fit:cover}.eyebrow{color:var(--gold);font-size:.74rem;letter-spacing:.18em;font-weight:800;text-transform:uppercase}.top h1{font-size:clamp(1.6rem,5vw,2.5rem);margin:7px 0 5px;line-height:1.1}.top p{color:var(--muted);margin:0}.gold{color:var(--gold)}.nav{display:flex;justify-content:center;gap:7px;flex-wrap:wrap;margin:14px 0 20px}.nav button{background:#171719;border:1px solid var(--line);color:var(--muted)}.nav button.active{border-color:var(--gold);color:var(--gold);background:#25200f}.layout{display:grid;grid-template-columns:1fr 1fr;gap:15px;padding-bottom:30px}.card{background:linear-gradient(155deg,#19191c,#111113);border:1px solid #343438;border-radius:17px;padding:18px;box-shadow:0 12px 35px #0004;min-width:0}.card h2{font-size:1.1rem;margin:0 0 5px}.sub{color:var(--muted);font-size:.88rem;margin:0 0 16px}.field{display:flex;flex-direction:column;gap:6px;margin:11px 0}.field label{font-size:.86rem;color:#ddd;font-weight:650}.field input,.field select,.field textarea{width:100%;padding:11px 12px;border-radius:10px;background:#0d0d0f;color:#fff;border:1px solid #3b3b40;outline:none;min-width:0}.field textarea{resize:vertical;min-height:75px}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold)}.full{width:100%}.status{display:flex;align-items:center;gap:8px;padding:10px 12px;border-radius:10px;background:#24200f;color:var(--gold2);font-size:.88rem;margin:13px 0}.dot{width:8px;height:8px;border-radius:50%;background:var(--gold);display:inline-block;flex:none}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:13px 0}.stat{padding:12px 7px;border:1px solid var(--line);border-radius:11px;background:#101012;text-align:center;min-width:0}.stat strong{display:block;font-size:1.35rem;color:var(--gold);overflow-wrap:anywhere}.stat span{display:block;font-size:.72rem;color:var(--muted)}.queue-list,.stack{display:flex;flex-direction:column;gap:8px}.queue-item,.row-item{display:flex;align-items:center;gap:10px;padding:11px;border:1px solid #343438;border-radius:12px;background:#101012;min-width:0}.pos{flex:0 0 36px;width:36px;height:36px;border-radius:10px;background:#2b2510;color:var(--gold2);display:grid;place-items:center;font-weight:900}.person{min-width:0;flex:1}.person strong{display:block;overflow-wrap:anywhere}.person small{color:var(--muted);display:block;margin-top:3px;overflow-wrap:anywhere}.pill{font-size:.7rem;border-radius:999px;padding:4px 7px;background:#29292e;color:#ddd;white-space:nowrap}.pill.wait{background:#332a10;color:#f1d778}.pill.called{background:#173522;color:#a4f0ba}.pill.serving{background:#183244;color:#a8dcff}.pill.bad{background:#4b2023;color:#ffd9d9}.empty{color:var(--muted);text-align:center;padding:20px 8px;border:1px dashed #3b3b40;border-radius:12px;font-size:.9rem}.notice{font-size:.8rem;color:var(--muted);line-height:1.5}.hidden{display:none!important}.admin-head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}.actions{display:flex;gap:6px;flex-wrap:wrap}.callout{border-left:3px solid var(--gold);padding:10px 12px;background:#211d10;border-radius:0 8px 8px 0;color:#e9dca7;font-size:.83rem;margin:13px 0}.login-box{max-width:420px;margin:0 auto}.tiny-link{background:none;color:var(--muted);text-decoration:underline;padding:7px;font-weight:500}.divider{height:1px;background:var(--line);margin:16px 0}.my-position{margin-top:14px;border:1px solid var(--gold);border-radius:14px;padding:15px;background:#211d10}.my-position .number{font-size:2.3rem;line-height:1.1;font-weight:900;color:var(--gold2)}.my-position p{margin:7px 0 0;color:#d4cba7}.toast{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:#242428;border:1px solid #555;color:#fff;padding:12px 16px;border-radius:12px;box-shadow:0 8px 30px #0009;z-index:20;max-width:calc(100% - 24px);text-align:center}.footer{text-align:center;color:#777780;font-size:.76rem;padding:0 0 24px}.qrbox{display:grid;grid-template-columns:140px 1fr;gap:14px;align-items:center}.qrbox img{width:140px;height:140px;background:#fff;padding:6px;border-radius:10px;object-fit:contain}.tabbar{display:flex;gap:7px;flex-wrap:wrap;margin:0 0 14px}.tabbar button{padding:9px 11px;font-size:.84rem;background:#19191c;color:var(--muted);border:1px solid #37373d}.tabbar button.active{color:var(--gold);border-color:var(--gold);background:#25200f}.tablewrap{overflow-x:auto}.table{width:100%;border-collapse:collapse;font-size:.84rem}.table th,.table td{padding:10px 8px;text-align:left;border-bottom:1px solid #333;vertical-align:top}.table th{color:var(--gold);font-weight:700}.metric{padding:14px;border:1px solid #37373d;border-radius:12px;background:#101012}.metric span{font-size:.8rem;color:var(--muted);display:block}.metric strong{font-size:1.45rem;color:var(--gold)}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.service-line{display:grid;grid-template-columns:1fr 105px 85px auto;gap:7px;align-items:center}.service-line input{min-width:0;width:100%;padding:9px;border-radius:8px;background:#0d0d0f;color:#fff;border:1px solid #3b3b40}.tag{font-size:.72rem;color:var(--muted);border:1px solid #444;border-radius:7px;padding:3px 6px}.filebtn{display:inline-block;background:#29292e;border:1px solid #444;border-radius:9px;padding:10px 12px;font-size:.85rem;font-weight:700;cursor:pointer}.success-text{color:var(--green)}.warning-text{color:var(--gold2)}
+@media(max-width:780px){.layout{grid-template-columns:1fr}.card{padding:15px}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.qrbox{grid-template-columns:110px 1fr}.qrbox img{width:110px;height:110px}.service-line{grid-template-columns:1fr 90px}.service-line .remove-service{grid-column:2}.two{grid-template-columns:1fr}.admin-row-actions{justify-content:flex-start}.queue-item{align-items:flex-start}.queue-item .pill{white-space:normal;text-align:center}.top{padding-top:18px}}
+</style>
+</head>
+<body>
+<header class="top wrap">
+  <div class="brand-mark" id="brandMark" aria-hidden="true">✦</div>
+  <div class="eyebrow">Barbearia</div>
+  <h1>INHO DÚ <span class="gold">CORTE</span></h1>
+  <p>Fila online • Ordem de chegada • Sem hora marcada</p>
+</header>
+<div class="wrap">
+<nav class="nav" aria-label="Navegação">
+  <button id="navClient" class="active" type="button">Fila do cliente</button>
+  <button id="navAdmin" type="button">Painel do barbeiro</button>
+</nav>
+<main id="clientView">
+ <div class="layout">
+  <section class="card">
+   <h2>Entre na <span class="gold">fila online</span></h2><p class="sub">Preencha seus dados e acompanhe sua vez.</p>
+   <div id="shopStatus" class="status"><span class="dot"></span><span>Fila online</span></div>
+   <form id="joinForm">
+    <div class="field"><label for="customerName">Seu nome</label><input id="customerName" maxlength="70" autocomplete="name" required placeholder="Digite seu nome"></div>
+    <div class="field"><label for="customerPhone">Telefone / WhatsApp</label><input id="customerPhone" maxlength="22" inputmode="tel" autocomplete="tel" required placeholder="(00) 00000-0000"></div>
+    <div class="field"><label for="customerService">Serviço desejado</label><select id="customerService" required></select></div>
+    <label style="display:flex;gap:9px;align-items:flex-start;color:var(--muted);font-size:.82rem;margin:12px 0"><input id="rememberMe" type="checkbox" style="accent-color:var(--gold);margin-top:4px"> Lembrar meus dados neste navegador</label>
+    <button class="btn-gold full" id="joinBtn" type="submit">ENTRAR NA FILA</button>
+   </form>
+   <div id="myPosition" class="my-position hidden" aria-live="polite"></div>
+   <p class="notice" style="margin-top:13px">A fila segue a ordem de chegada. Se for chamado, compareça em até 10 minutos.</p>
+  </section>
+  <section class="card">
+   <h2>Acompanhe a <span class="gold">fila</span></h2><p class="sub">Posições e status da fila neste navegador.</p>
+   <div class="stats">
+    <div class="stat"><strong id="statWaiting">0</strong><span>Aguardando</span></div><div class="stat"><strong id="statCalled">0</strong><span>Chamados</span></div><div class="stat"><strong id="statServing">0</strong><span>Em atendimento</span></div><div class="stat"><strong id="statServed">0</strong><span>Concluídos hoje</span></div>
+   </div>
+   <div id="publicQueue" class="queue-list"></div>
+   <div class="divider"></div>
+   <h2>Como funciona</h2><p id="publicRules" class="notice">Entre na fila, acompanhe sua posição e fique atento quando chegar sua vez.</p>
+  </section>
+ </div>
+</main>
+<main id="adminView" class="hidden">
+ <section id="loginSection" class="card login-box">
+  <h2>Área do <span class="gold">barbeiro</span></h2><p class="sub">Entre para administrar a fila local.</p>
+  <form id="loginForm">
+   <div class="field"><label for="adminUser">Usuário</label><input id="adminUser" autocomplete="username" required placeholder="Usuário"></div>
+   <div class="field"><label for="adminPass">Senha</label><input id="adminPass" type="password" autocomplete="current-password" required placeholder="Senha"></div>
+   <button class="btn-gold full" type="submit">ENTRAR NO PAINEL</button>
+  </form>
+  <p class="notice">Acesso inicial de demonstração: usuário <strong>inho</strong>, senha <strong>trocar123</strong>. Altere as credenciais no código antes de publicar. Este login não é segurança real: os dados de autenticação ficam no HTML.</p>
+ </section>
+ <section id="adminPanel" class="hidden">
+  <div class="card">
+   <div class="admin-head"><div><h2>Painel da <span class="gold">fila</span></h2><p class="sub" style="margin:4px 0 0">Controle os atendimentos e os clientes.</p></div><div class="actions"><button id="toggleQueueBtn" class="btn-dark btn-small">Pausar fila</button><button id="logoutBtn" class="btn-dark btn-small">Sair</button></div></div>
+   <div class="callout">Tolerância de 10 minutos após a chamada. Depois desse prazo, registre a falta e passe a vez. Nesta versão, a decisão é manual.</div>
+   <div class="stats"><div class="stat"><strong id="adminWaiting">0</strong><span>Aguardando</span></div><div class="stat"><strong id="adminCalled">0</strong><span>Chamados</span></div><div class="stat"><strong id="adminServing">0</strong><span>Em atendimento</span></div><div class="stat"><strong id="adminServed">0</strong><span>Concluídos hoje</span></div></div>
+   <div class="actions" style="margin-bottom:15px"><button id="callNextBtn" class="btn-gold">📣 Chamar próximo</button><button id="exportBtn" class="btn-dark">Exportar backup</button></div>
+   <div id="adminQueue" class="queue-list"></div>
+  </div>
+  <div class="card" style="margin-top:15px">
+   <div class="tabbar">
+    <button class="active" data-tab="clients">Clientes</button><button data-tab="services">Serviços</button><button data-tab="reports">Relatórios</button><button data-tab="settings">Personalização / QR</button><button data-tab="backup">Backup</button>
+   </div>
+   <section id="tab-clients">
+    <h2>Cadastro e histórico de <span class="gold">clientes</span></h2><p class="sub">Os clientes são reconhecidos pelo telefone neste navegador.</p>
+    <div class="field"><label for="clientSearch">Buscar por nome ou telefone</label><input id="clientSearch" placeholder="Digite para pesquisar"></div>
+    <div id="clientList" class="stack"></div>
+   </section>
+   <section id="tab-services" class="hidden">
+    <h2>Serviços e <span class="gold">preços</span></h2><p class="sub">Configure os serviços disponíveis no formulário público.</p>
+    <div id="serviceEditor" class="stack"></div>
+    <div class="actions" style="margin-top:12px"><button id="addServiceBtn" class="btn-dark">+ Adicionar serviço</button><button id="saveServicesBtn" class="btn-gold">Salvar serviços</button></div>
+   </section>
+   <section id="tab-reports" class="hidden">
+    <h2>Relatórios <span class="gold">locais</span></h2><p class="sub">Resumo calculado com os registros deste navegador.</p>
+    <div class="two">
+     <div class="metric"><span>Atendimentos concluídos hoje</span><strong id="reportToday">0</strong></div><div class="metric"><span>Faltas registradas hoje</span><strong id="reportMissed">0</strong></div><div class="metric"><span>Valor estimado hoje</span><strong id="reportRevenue">R$ 0,00</strong></div><div class="metric"><span>Clientes cadastrados</span><strong id="reportClients">0</strong></div>
+    </div>
+    <div class="divider"></div><h3 style="font-size:1rem">Serviços concluídos</h3><div id="serviceReport" class="stack"></div>
+    <div class="divider"></div><h3 style="font-size:1rem">Histórico recente</h3><div id="historyList" class="tablewrap"></div>
+   </section>
+   <section id="tab-settings" class="hidden">
+    <h2>Personalização e <span class="gold">QR Code</span></h2><p class="sub">Configure os avisos, horário e identidade visual da fila.</p>
+    <div class="field"><label for="openTime">Horário de abertura (aviso)</label><input id="openTime" type="time" value="06:00"></div>
+    <div class="field"><label for="adminNote">Aviso exibido na fila</label><input id="adminNote" maxlength="180"></div>
+    <div class="field"><label for="rulesInput">Regras para clientes</label><textarea id="rulesInput" maxlength="500"></textarea></div>
+    <div class="field"><label for="logoInput">Logo da barbearia (opcional)</label><input id="logoInput" type="file" accept="image/*"><small class="notice">A imagem fica guardada neste navegador. Imagens grandes podem consumir o limite do armazenamento.</small></div>
+    <div class="actions"><button id="saveSettingsBtn" class="btn-gold">Salvar personalização</button><button id="removeLogoBtn" class="btn-dark">Remover logo</button></div>
+    <div class="divider"></div><h3 style="font-size:1rem">QR Code do site</h3>
+    <div class="qrbox"><img id="qrImage" alt="QR Code do endereço do site" src=""><div><p class="notice">O QR Code usa o endereço atual do site. Publique no GitHub Pages antes de imprimir. A geração da imagem requer internet.</p><button id="refreshQrBtn" class="btn-dark btn-small">Atualizar QR Code</button> <button id="printQrBtn" class="btn-gold btn-small">Imprimir</button><p id="siteAddress" class="notice" style="overflow-wrap:anywhere"></p></div></div>
+   </section>
+   <section id="tab-backup" class="hidden">
+    <h2>Backup e <span class="gold">restauração</span></h2><p class="sub">Exporte uma cópia dos dados antes de limpar o navegador ou trocar de aparelho.</p>
+    <div class="actions"><button id="exportFullBtn" class="btn-gold">Baixar backup JSON</button><label class="filebtn">Restaurar backup JSON<input id="importFile" type="file" accept=".json,application/json" hidden></label></div>
+    <p class="notice">Restaurar substitui os dados locais atuais pelos dados do arquivo escolhido. Faça um backup antes. Nunca importe arquivos que você não reconhece.</p>
+    <div class="divider"></div><button id="clearFinishedBtn" class="btn-dark">Limpar registros encerrados da fila</button> <button id="resetAllBtn" class="btn-danger">Apagar todos os dados locais</button>
+    <p class="notice">A exclusão afeta apenas este navegador e não pode ser desfeita sem um backup.</p>
+   </section>
+  </div>
+ </section>
+</main>
+</div>
+<footer class="footer wrap">© <span id="year"></span> Barbearia Inho Dú Corte • Fila online</footer>
+<div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+<script>
+(function(){
+'use strict';
+const KEY='inho_fila_local_v1', SETTINGS='inho_fila_settings_v1', SESSION='inho_fila_admin_session_v1';
+const CLIENTS='inho_fila_clients_v1', SERVICES='inho_fila_services_v1', HISTORY='inho_fila_history_v1';
+const $=id=>document.getElementById(id);
+const defaultServices=[
+ {id:'svc_corte',name:'Corte',price:25,active:true},
+ {id:'svc_barba',name:'Barba',price:15,active:true},
+ {id:'svc_sobrancelha',name:'Sobrancelha',price:5,active:true}
+];
+const defaultSettings={openTime:'06:00',note:'Link da fila on-line disponível a partir das 6:00 da manhã.',rules:'A fila segue a ordem de chegada. Após ser chamado, você tem 10 minutos para comparecer. Se não estiver disponível, sua vez poderá passar para o próximo cliente.',paused:false,logo:''};
+function read(key,fallback){try{const v=localStorage.getItem(key);return v?JSON.parse(v):fallback}catch(e){return fallback}}
+function write(key,val){try{localStorage.setItem(key,JSON.stringify(val));return true}catch(e){toast('Não foi possível salvar. O armazenamento pode estar cheio.');return false}}
+let settings={...defaultSettings,...read(SETTINGS,{})},queue=read(KEY,[]),clients=read(CLIENTS,[]),services=read(SERVICES,defaultServices),history=read(HISTORY,[]),currentCustomerId=null,toastTimer=null;
+if(!Array.isArray(queue))queue=[];if(!Array.isArray(clients))clients=[];if(!Array.isArray(services))services=defaultServices;if(!Array.isArray(history))history=[];
+function toast(msg){$('toast').textContent=msg;$('toast').classList.remove('hidden');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.add('hidden'),3300)}
+function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function money(v){return Number(v||0).toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}
+function today(){const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
+function dateText(v){if(!v)return '—';try{return new Date(v).toLocaleString('pt-BR',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'})}catch(e){return '—'}}
+function timeText(v){if(!v)return '';try{return new Date(v).toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})}catch(e){return ''}}
+function duration(a,b){if(!a||!b)return '—';const mins=Math.max(0,Math.round((new Date(b)-new Date(a))/60000));return mins<60?mins+' min':Math.floor(mins/60)+'h '+(mins%60)+'min'}
+function saveQueue(){write(KEY,queue)}function saveSettings(){write(SETTINGS,settings)}function saveClients(){write(CLIENTS,clients)}function saveServices(){write(SERVICES,services)}function saveHistory(){write(HISTORY,history)}
+function activeItems(){return queue.filter(x=>['waiting','called','serving'].includes(x.status)).sort((a,b)=>new Date(a.createdAt)-new Date(b.createdAt))}
+function statusLabel(s){return({waiting:'Aguardando',called:'Chamado',serving:'Em atendimento',served:'Concluído',missed:'Faltou',removed:'Removido'})[s]||s}
+function statusClass(s){return s==='called'?'called':s==='serving'?'serving':s==='waiting'?'wait':s==='missed'?'bad':''}
+function positionFor(item){return activeItems().findIndex(x=>x.id===item.id)+1}
+function getService(id){return services.find(s=>s.id===id)||{name:'Serviço removido',price:0}}
+function ensureClient(name,phone){const norm=phone.replace(/\D/g,'');let c=clients.find(x=>x.phone.replace(/\D/g,'')===norm);if(!c){c={id:'cl_'+Date.now().toString(36),name,phone,firstSeen:new Date().toISOString(),visits:0,served:0,missed:0,history:[]};clients.push(c)}else{c.name=name;c.phone=phone;c.lastSeen=new Date().toISOString()}saveClients();return c}
+function updateClientHistory(item,status){const c=clients.find(x=>x.id===item.clientId);if(!c)return;c.history=c.history||[];if(status==='served'){c.served=(c.served||0)+1;c.visits=(c.visits||0)+1}else if(status==='missed')c.missed=(c.missed||0)+1;c.history.unshift({date:new Date().toISOString(),status,serviceName:item.serviceName||getService(item.serviceId).name,price:Number(item.price||0),wait:duration(item.createdAt,item.calledAt||item.startedAt||item.finishedAt),cut:duration(item.startedAt,item.finishedAt)});c.history=c.history.slice(0,100);c.lastSeen=new Date().toISOString();saveClients()}
+function finishItem(item,status){const now=new Date().toISOString();item.status=status;item.finishedAt=now;item.updatedAt=now;updateClientHistory(item,status);history.unshift({id:'h_'+Date.now().toString(36),queueId:item.id,clientId:item.clientId,name:item.name,phone:item.phone,serviceName:item.serviceName||getService(item.serviceId).name,price:Number(item.price||0),status,createdAt:item.createdAt,calledAt:item.calledAt||null,startedAt:item.startedAt||null,finishedAt:now});history=history.slice(0,1000);saveHistory()}
+function activeServiceList(){return services.filter(s=>s.active!==false)}
+function renderServiceSelect(){const sel=$('customerService'),old=sel.value;sel.innerHTML=activeServiceList().map(s=>'<option value="'+esc(s.id)+'">'+esc(s.name)+' — '+money(s.price)+'</option>').join('');if(activeServiceList().some(s=>s.id===old))sel.value=old;if(!activeServiceList().length)sel.innerHTML='<option value="">Nenhum serviço disponível</option>'}
+function renderLogo(){const mark=$('brandMark');if(settings.logo){mark.innerHTML='<img alt="Logo da barbearia" src="'+settings.logo+'">'}else mark.textContent='✦'}
+function render(){
+ const active=activeItems(),waiting=active.filter(x=>x.status==='waiting').length,called=active.filter(x=>x.status==='called').length,serving=active.filter(x=>x.status==='serving').length;
+ $('statWaiting').textContent=waiting;$('statCalled').textContent=called;$('statServing').textContent=serving;$('statServed').textContent=history.filter(x=>x.status==='served'&&String(x.finishedAt||'').slice(0,10)===today()).length;
+ $('adminWaiting').textContent=waiting;$('adminCalled').textContent=called;$('adminServing').textContent=serving;$('adminServed').textContent=history.filter(x=>x.status==='served'&&String(x.finishedAt||'').slice(0,10)===today()).length;
+ $('shopStatus').innerHTML='<span class="dot"></span><span>'+esc(settings.paused?'Fila pausada no momento.':settings.note||'Fila online disponível.')+'</span>';
+ $('joinBtn').disabled=settings.paused||!activeServiceList().length;$('joinBtn').style.opacity=$('joinBtn').disabled?'.5':'1';$('toggleQueueBtn').textContent=settings.paused?'Abrir fila':'Pausar fila';$('publicRules').textContent=settings.rules||defaultSettings.rules;
+ const pub=$('publicQueue');pub.innerHTML='';if(!active.length)pub.innerHTML='<div class="empty">Ainda não há clientes na fila.<br>Seja o primeiro a entrar!</div>';
+ active.forEach(item=>{const pos=positionFor(item),el=document.createElement('div');el.className='queue-item';el.innerHTML='<div class="pos">'+pos+'</div><div class="person"><strong>'+esc(item.name)+'</strong><small>'+esc(item.serviceName||getService(item.serviceId).name)+' • '+esc(statusLabel(item.status))+(item.status==='called'&&item.calledAt?' • chamado às '+timeText(item.calledAt):'')+'</small></div><span class="pill '+statusClass(item.status)+'">'+esc(statusLabel(item.status))+'</span>';pub.appendChild(el)});
+ const adm=$('adminQueue');adm.innerHTML='';if(!active.length)adm.innerHTML='<div class="empty">A fila está vazia.</div>';
+ active.forEach(item=>{const pos=positionFor(item),el=document.createElement('div');el.className='queue-item';let actions='';
+  if(item.status==='waiting')actions+='<button class="btn-gold btn-small" data-action="call" data-id="'+esc(item.id)+'">Chamar</button>';
+  if(item.status==='called')actions+='<button class="btn-gold btn-small" data-action="serve" data-id="'+esc(item.id)+'">Iniciar</button><button class="btn-dark btn-small" data-action="miss" data-id="'+esc(item.id)+'">Faltou</button>';
+  if(item.status==='serving')actions+='<button class="btn-green btn-small" data-action="done" data-id="'+esc(item.id)+'">Concluir</button>';
+  actions+='<button class="btn-danger btn-small" data-action="remove" data-id="'+esc(item.id)+'">Remover</button>';
+  el.innerHTML='<div class="pos">'+pos+'</div><div class="person"><strong>'+esc(item.name)+'</strong><small>'+esc(item.phone)+' • '+esc(item.serviceName||getService(item.serviceId).name)+' • '+money(item.price)+'</small><small>Entrou '+dateText(item.createdAt)+(item.calledAt?' • espera até chamada: '+duration(item.createdAt,item.calledAt):'')+(item.startedAt?' • corte: '+duration(item.startedAt,new Date().toISOString()):'')+'</small><span class="pill '+statusClass(item.status)+'">'+esc(statusLabel(item.status))+'</span></div><div class="actions admin-row-actions">'+actions+'</div>';adm.appendChild(el)
+ });
+ renderClients();renderReports();renderLogo();renderServiceSelect();
+ $('openTime').value=settings.openTime||'06:00';$('adminNote').value=settings.note||'';$('rulesInput').value=settings.rules||defaultSettings.rules;
+ if(currentCustomerId){const mine=queue.find(x=>x.id===currentCustomerId);if(mine&&['waiting','called','serving'].includes(mine.status)){const p=positionFor(mine);$('myPosition').classList.remove('hidden');$('myPosition').innerHTML='<div class="eyebrow">Sua posição</div><div class="number">'+(p||'—')+'</div><p><strong>'+esc(statusLabel(mine.status))+'</strong> • '+esc(mine.serviceName||getService(mine.serviceId).name)+'<br>'+(mine.status==='called'?'Você foi chamado! Dirija-se ao barbeiro.':mine.status==='serving'?'Seu atendimento começou.':'Acompanhe a fila nesta página.')+'</p><button type="button" class="tiny-link" id="leaveQueueBtn">Desistir e sair da fila</button>';const leave=$('leaveQueueBtn');leave.onclick=()=>{if(confirm('Deseja sair da fila?')){mine.status='removed';mine.finishedAt=new Date().toISOString();saveQueue();currentCustomerId=null;$('myPosition').classList.add('hidden');render();toast('Você saiu da fila.')}}}else{$('myPosition').classList.add('hidden');currentCustomerId=null}}
+}
+function renderClients(){
+ const query=($('clientSearch').value||'').toLowerCase(),list=clients.filter(c=>(c.name+' '+c.phone).toLowerCase().includes(query)).sort((a,b)=>(b.served||0)-(a.served||0));
+ const root=$('clientList');root.innerHTML='';if(!list.length){root.innerHTML='<div class="empty">Nenhum cliente encontrado ainda. Os cadastros são criados quando alguém entra na fila.</div>';return}
+ list.forEach(c=>{const el=document.createElement('div');el.className='row-item';el.innerHTML='<div class="person"><strong>'+esc(c.name)+' '+((c.served||0)>1?'<span class="tag">Recorrente</span>':'')+'</strong><small>'+esc(c.phone)+' • '+(c.served||0)+' atendimentos • '+(c.missed||0)+' faltas</small><small>Último registro: '+dateText(c.lastSeen||c.firstSeen)+'</small><details style="margin-top:7px"><summary class="gold" style="cursor:pointer;font-size:.82rem">Ver histórico</summary><div class="notice" style="margin-top:8px">'+((c.history||[]).length?c.history.slice(0,10).map(h=>'<div style="padding:5px 0;border-bottom:1px solid #333">'+dateText(h.date)+' • '+esc(h.serviceName)+' • '+esc(statusLabel(h.status))+' • '+money(h.price)+'</div>').join(''):'Sem histórico de atendimentos concluídos.')+'</div></details></div><button class="btn-dark btn-small" data-client="'+esc(c.id)+'">Ver detalhes</button>';root.appendChild(el)})
+}
+function renderReports(){
+ const todays=history.filter(h=>String(h.finishedAt||'').slice(0,10)===today()),served=todays.filter(h=>h.status==='served'),missed=todays.filter(h=>h.status==='missed'),revenue=served.reduce((sum,h)=>sum+Number(h.price||0),0);
+ $('reportToday').textContent=served.length;$('reportMissed').textContent=missed.length;$('reportRevenue').textContent=money(revenue);$('reportClients').textContent=clients.length;
+ const counts={};served.forEach(h=>{const k=h.serviceName||'Serviço';counts[k]=(counts[k]||0)+1});
+ $('serviceReport').innerHTML=Object.keys(counts).length?Object.entries(counts).map(([name,count])=>'<div class="row-item"><div class="person"><strong>'+esc(name)+'</strong></div><span class="pill">'+count+' atend.'+'</span></div>').join(''):'<div class="empty">Nenhum serviço concluído hoje.</div>';
+ const recent=history.slice(0,30);$('historyList').innerHTML=recent.length?'<table class="table"><thead><tr><th>Data</th><th>Cliente</th><th>Serviço</th><th>Status</th><th>Valor</th><th>Tempo</th></tr></thead><tbody>'+recent.map(h=>'<tr><td>'+dateText(h.finishedAt)+'</td><td>'+esc(h.name)+'</td><td>'+esc(h.serviceName)+'</td><td>'+esc(statusLabel(h.status))+'</td><td>'+money(h.price)+'</td><td>Espera: '+duration(h.createdAt,h.calledAt||h.finishedAt)+'<br>Corte: '+duration(h.startedAt,h.finishedAt)+'</td></tr>').join('')+'</tbody></table>':'<div class="empty">O histórico aparecerá quando atendimentos forem concluídos ou faltas registradas.</div>';
+}
+function setView(which){const admin=which==='admin';$('clientView').classList.toggle('hidden',admin);$('adminView').classList.toggle('hidden',!admin);$('navClient').classList.toggle('active',!admin);$('navAdmin').classList.toggle('active',admin);if(admin){const logged=sessionStorage.getItem(SESSION)==='1';$('loginSection').classList.toggle('hidden',logged);$('adminPanel').classList.toggle('hidden',!logged)}}
+function setTab(name){document.querySelectorAll('[data-tab]').forEach(b=>b.classList.toggle('active',b.dataset.tab===name));['clients','services','reports','settings','backup'].forEach(t=>$('tab-'+t).classList.toggle('hidden',t!==name));if(name==='services')renderServiceEditor();if(name==='settings')renderQR()}
+function renderServiceEditor(){const root=$('serviceEditor');root.innerHTML='';services.forEach((s,i)=>{const el=document.createElement('div');el.className='service-line';el.innerHTML='<input aria-label="Nome do serviço" data-sname="'+i+'" value="'+esc(s.name)+'" placeholder="Nome do serviço"><input aria-label="Preço" data-sprice="'+i+'" type="number" min="0" step=".50" value="'+Number(s.price||0)+'"><label style="font-size:.8rem;color:#ddd"><input data-sactive="'+i+'" type="checkbox" '+(s.active!==false?'checked':'')+'> Ativo</label><button class="btn-danger btn-small remove-service" data-remove-service="'+esc(s.id)+'">Excluir</button>';root.appendChild(el)})}
+function renderQR(){const url=location.href.split('#')[0];$('siteAddress').textContent=url;$('qrImage').src='https://api.qrserver.com/v1/create-qr-code/?size=280x280&data='+encodeURIComponent(url)}
+function backupObject(){return{app:'Fila Online Inho Dú Corte',version:2,exportedAt:new Date().toISOString(),queue,settings,clients,services,history}}
+function downloadBackup(){const blob=new Blob([JSON.stringify(backupObject(),null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='backup-fila-inho-du-corte-'+today()+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('Backup JSON exportado.')}
+$('navClient').onclick=()=>setView('client');$('navAdmin').onclick=()=>setView('admin');
+$('loginForm').addEventListener('submit',e=>{e.preventDefault();if($('adminUser').value.trim()==='inho'&&$('adminPass').value==='trocar123'){sessionStorage.setItem(SESSION,'1');setView('admin');toast('Login local autorizado. Troque a senha no código.')}else toast('Usuário ou senha incorretos.')});
+$('logoutBtn').onclick=()=>{sessionStorage.removeItem(SESSION);setView('admin');toast('Você saiu do painel.')};
+$('joinForm').addEventListener('submit',e=>{
+ e.preventDefault();if(settings.paused){toast('A fila está pausada no momento.');return}
+ const name=$('customerName').value.trim(),phone=$('customerPhone').value.trim(),service=getService($('customerService').value);
+ if(name.length<2||phone.replace(/\D/g,'').length<8){toast('Confira seu nome e telefone.');return}
+ const norm=phone.replace(/\D/g,''),duplicate=activeItems().find(x=>x.phone.replace(/\D/g,'')===norm);
+ if(duplicate){currentCustomerId=duplicate.id;render();toast('Este telefone já está na fila.');return}
+ const c=ensureClient(name,phone),item={id:'q_'+Date.now().toString(36)+'_'+Math.random().toString(36).slice(2,7),clientId:c.id,name,phone,serviceId:service.id,serviceName:service.name,price:Number(service.price||0),status:'waiting',createdAt:new Date().toISOString()};
+ queue.push(item);saveQueue();currentCustomerId=item.id;
+ if($('rememberMe').checked)localStorage.setItem('inho_fila_customer_v1',JSON.stringify({name,phone}));else localStorage.removeItem('inho_fila_customer_v1');
+ $('customerName').value='';$('customerPhone').value='';render();toast('Você entrou na fila! Sua posição está destacada.')
+});
+$('adminQueue').addEventListener('click',e=>{
+ const btn=e.target.closest('button[data-action]');if(!btn)return;const item=queue.find(x=>x.id===btn.dataset.id);if(!item)return;const action=btn.dataset.action,now=new Date().toISOString();
+ if(action==='call'){item.status='called';item.calledAt=now;toast('Cliente chamado. A tolerância é de 10 minutos.')}
+ else if(action==='serve'){item.status='serving';item.startedAt=now;toast('Atendimento iniciado.')}
+ else if(action==='done'){finishItem(item,'served');toast('Atendimento concluído e registrado no histórico.')}
+ else if(action==='miss'){finishItem(item,'missed');toast('Falta registrada; a vez passou.')}
+ else if(action==='remove'){if(!confirm('Remover este cliente da fila sem registrar falta?'))return;item.status='removed';item.finishedAt=now;history.unshift({id:'h_'+Date.now().toString(36),queueId:item.id,clientId:item.clientId,name:item.name,phone:item.phone,serviceName:item.serviceName,price:0,status:'removed',createdAt:item.createdAt,finishedAt:now});saveHistory();toast('Cliente removido.')}
+ saveQueue();render()
+});
+$('callNextBtn').onclick=()=>{if(settings.paused){toast('Abra a fila antes de chamar.');return}const item=activeItems().find(x=>x.status==='waiting');if(!item){toast('Não há cliente aguardando.');return}item.status='called';item.calledAt=new Date().toISOString();saveQueue();render();toast('Próximo cliente chamado: '+item.name+'. Tolerância de 10 minutos.')};
+$('toggleQueueBtn').onclick=()=>{settings.paused=!settings.paused;saveSettings();render();toast(settings.paused?'Fila pausada.':'Fila aberta.')};
+document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>setTab(b.dataset.tab)));
+$('clientSearch').addEventListener('input',renderClients);
+$('clientList').addEventListener('click',e=>{const b=e.target.closest('[data-client]');if(!b)return;const c=clients.find(x=>x.id===b.dataset.client);if(c)alert('Cliente: '+c.name+'\nTelefone: '+c.phone+'\nAtendimentos: '+(c.served||0)+'\nFaltas: '+(c.missed||0)+'\nPrimeiro cadastro: '+dateText(c.firstSeen))});
+$('addServiceBtn').onclick=()=>{services.push({id:'svc_'+Date.now().toString(36),name:'Novo serviço',price:0,active:true});renderServiceEditor()};
+$('serviceEditor').addEventListener('click',e=>{const b=e.target.closest('[data-remove-service]');if(!b)return;if(!confirm('Excluir este serviço da lista? O histórico antigo será preservado.'))return;services=services.filter(s=>s.id!==b.dataset.removeService);renderServiceEditor()});
+$('saveServicesBtn').onclick=()=>{document.querySelectorAll('[data-sname]').forEach(input=>{const i=Number(input.dataset.sname);if(services[i])services[i].name=input.value.trim()||'Serviço'});document.querySelectorAll('[data-sprice]').forEach(input=>{const i=Number(input.dataset.sprice);if(services[i])services[i].price=Math.max(0,Number(input.value||0))});document.querySelectorAll('[data-sactive]').forEach(input=>{const i=Number(input.dataset.sactive);if(services[i])services[i].active=input.checked});saveServices();render();renderServiceEditor();toast('Serviços e preços salvos.')};
+$('saveSettingsBtn').onclick=()=>{settings.openTime=$('openTime').value||'06:00';settings.note=$('adminNote').value.trim()||'Link da fila on-line disponível a partir das 6:00 da manhã.';settings.rules=$('rulesInput').value.trim()||defaultSettings.rules;saveSettings();render();toast('Personalização salva neste navegador.')};
+$('logoInput').addEventListener('change',e=>{const file=e.target.files&&e.target.files[0];if(!file)return;if(!file.type.startsWith('image/')){toast('Escolha um arquivo de imagem.');return}if(file.size>1200000){toast('Escolha uma imagem de até 1,2 MB.');e.target.value='';return}const reader=new FileReader();reader.onload=()=>{settings.logo=reader.result;saveSettings();renderLogo();toast('Logo carregada neste navegador. Clique em salvar personalização para guardar as demais alterações.')};reader.readAsDataURL(file)});
+$('removeLogoBtn').onclick=()=>{settings.logo='';saveSettings();renderLogo();$('logoInput').value='';toast('Logo removida.')};
+$('refreshQrBtn').onclick=renderQR;$('printQrBtn').onclick=()=>{renderQR();const w=window.open('','_blank');if(!w){toast('Permita pop-ups para imprimir o QR Code.');return}w.document.write('<!DOCTYPE html><html><head><title>QR Code - Inho Dú Corte</title><style>body{font-family:Arial;text-align:center;padding:25px}img{width:280px;height:280px}h1{font-size:24px}</style></head><body><h1>BARBEARIA INHO DÚ CORTE</h1><h2>Entre na fila online</h2><img src="'+$('qrImage').src+'"><p>Escaneie para acessar a fila</p><p>'+esc(location.href.split('#')[0])+'</p><script>window.onload=()=>window.print()<\/script></body></html>');w.document.close()};
+$('exportBtn').onclick=downloadBackup;$('exportFullBtn').onclick=downloadBackup;
+$('importFile').addEventListener('change',e=>{const file=e.target.files&&e.target.files[0];if(!file)return;const reader=new FileReader();reader.onload=()=>{try{const data=JSON.parse(reader.result);if(!data||!Array.isArray(data.queue)||!Array.isArray(data.services)||!Array.isArray(data.clients)||!Array.isArray(data.history)||!data.settings)throw new Error('Formato de backup inválido');if(!confirm('Isso vai substituir os dados locais atuais. Deseja continuar?'))return;queue=data.queue;services=data.services;clients=data.clients;history=data.history;settings={...defaultSettings,...data.settings};saveQueue();saveServices();saveClients();saveHistory();saveSettings();render();toast('Backup restaurado com sucesso.')}catch(err){toast('Não foi possível restaurar: arquivo inválido ou incompatível.')}finally{$('importFile').value=''}};reader.readAsText(file)});
+$('clearFinishedBtn').onclick=()=>{if(!confirm('Remover da fila os registros concluídos, faltas e removidos? O histórico de relatórios e clientes será mantido.'))return;queue=queue.filter(x=>['waiting','called','serving'].includes(x.status));saveQueue();render();toast('Registros encerrados removidos da fila.')};
+$('resetAllBtn').onclick=()=>{if(!confirm('ATENÇÃO: apagar todos os dados da fila, clientes, serviços personalizados, histórico e configurações deste navegador?'))return;if(!confirm('Confirma definitivamente? Exporte um backup antes, se precisar.'))return;[KEY,SETTINGS,CLIENTS,SERVICES,HISTORY,'inho_fila_customer_v1'].forEach(k=>localStorage.removeItem(k));queue=[];settings={...defaultSettings};clients=[];services=defaultServices.map(s=>({...s}));history=[];currentCustomerId=null;saveQueue();saveSettings();saveClients();saveServices();saveHistory();render();toast('Dados locais apagados.')};
+window.addEventListener('storage',e=>{if([KEY,SETTINGS,CLIENTS,SERVICES,HISTORY].includes(e.key)){settings={...defaultSettings,...read(SETTINGS,{})};queue=read(KEY,[]);clients=read(CLIENTS,[]);services=read(SERVICES,defaultServices);history=read(HISTORY,[]);render()}});
+const remembered=read('inho_fila_customer_v1',null);if(remembered){$('customerName').value=remembered.name||'';$('customerPhone').value=remembered.phone||'';$('rememberMe').checked=true}
+$('year').textContent=new Date().getFullYear();render();renderQR();
+})();
+</script>
+</body>
+</html>
